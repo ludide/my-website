@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sidebar Container: This is where the sidebar will be dynamically inserted -->
+  <div id="sidebar-container"></div>
+
+  <!-- Page-specific content -->
+  <div class="content">
+    <h1>Welcome to the Home Page</h1>
+    <p>Here is some content.</p>
+  </div>
+
+  <!-- JavaScript to load the sidebar dynamically -->
+  <script>
+    // Use fetch to load sidebar.html and insert its content into the page
+    fetch('sidebar.html')
+      .then(response => response.text())  // Convert the response to text (HTML)
+      .then(data => {
+        // Insert the sidebar content into the 'sidebar-container' div
+        document.getElementById('sidebar-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading sidebar:', error);
+      });
+  </script>
+
+</body>
+</html>
+
+
+
